@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "info": {
+    "title": "TheHive Add-on",
+    "id": {
+      "group": null,
+      "name": "TA-TheHive-Addon",
+      "version": "1.0.0"
+    },
+    "author": [
+      {
+        "name": "Kyle Colantonio",
+        "email": null,
+        "company": null
+      }
+    ],
+    "releaseDate": null,
+    "description": "An add-on that adds an Alert Action for creating alerts in TheHive.",
+    "classification": {
+      "intendedAudience": null,
+      "categories": [],
+      "developmentStatus": null
+    },
+    "commonInformationModels": null,
+    "license": {
+      "name": null,
+      "text": null,
+      "uri": null
+    },
+    "privacyPolicy": {
+      "name": null,
+      "text": null,
+      "uri": null
+    },
+    "releaseNotes": {
+      "name": null,
+      "text": null,
+      "uri": null
+    }
+  },
+  "dependencies": {
+  },
+  "tasks": [],
+  "inputGroups": {
+  },
+  "incompatibleApps": {
+  },
+  "platformRequirements": {
+    "splunk": {
+      "Enterprise": "*"
+    }
+  }
+}

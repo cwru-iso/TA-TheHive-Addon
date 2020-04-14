@@ -1,0 +1,106 @@
+<form class="form-horizontal form-complex">
+<div class="control-group">
+	<label class="control-label" for="thehive_create_alert_alert_source">Source <span class="required">*</span> </label>
+    <div class="controls">
+	<input type="text" name="action.thehive_create_alert.param.alert_source" id="thehive_create_alert_alert_source"/>
+                <span class="help-block"> 
+                    Source of the new alert entry. Default = "splunk"
+                </span>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="thehive_create_alert_alert_type">Type <span class="required">*</span> </label>
+    <div class="controls">
+	<input type="text" name="action.thehive_create_alert.param.alert_type" id="thehive_create_alert_alert_type"/>
+                <span class="help-block"> 
+                    Type for the new alert entry. Default = "alert"
+                </span>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="thehive_create_alert_alert_title">Title <span class="required">*</span> </label>
+    <div class="controls">
+	<input type="text" name="action.thehive_create_alert.param.alert_title" id="thehive_create_alert_alert_title"/>
+                <span class="help-block"> 
+                    Title of the new alert entry. Default = "$name$"
+                </span>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="thehive_create_alert_alert_description">Description  </label>
+    <div class="controls">
+	<input type="text" name="action.thehive_create_alert.param.alert_description" id="thehive_create_alert_alert_description"/>
+                <span class="help-block"> 
+                    Description of the new alert entry - Can be set to a field. eg: "alert_desc"
+                </span>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="thehive_create_alert_alert_tags">Tags  </label>
+    <div class="controls">
+	<input type="text" name="action.thehive_create_alert.param.alert_tags" id="thehive_create_alert_alert_tags"/>
+                <span class="help-block"> 
+                    Comma-separated list of tags for the new alert entry. eg: "malware,c2"
+                </span>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="thehive_create_alert_alert_case_template">Case Template  </label>
+    <div class="controls">
+	<input type="text" name="action.thehive_create_alert.param.alert_case_template" id="thehive_create_alert_alert_case_template"/>
+                <span class="help-block"> 
+                    Case Template to use for the new alert entry. eg: "Malware Investigation"
+                </span>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="thehive_create_alert_alert_severity">Severity <span class="required">*</span> </label>
+    <div class="controls">
+<select name="action.thehive_create_alert.param.alert_severity" id="thehive_create_alert_alert_severity">
+        <option value="1">LOW</option>
+        <option value="3">HIGH</option>
+        <option value="2">MEDIUM</option>
+</select>
+                <span class="help-block"> 
+                    Severity of the new alert entry. Default = "AMBER"
+                </span>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="thehive_create_alert_alert_tlp">TLP <span class="required">*</span> </label>
+    <div class="controls">
+<select name="action.thehive_create_alert.param.alert_tlp" id="thehive_create_alert_alert_tlp">
+        <option value="2">AMBER</option>
+        <option value="0">WHITE</option>
+        <option value="3">RED</option>
+        <option value="1">GREEN</option>
+</select>
+                <span class="help-block"> 
+                    TLP of the new alert entry. Default = "AMBER"
+                </span>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="thehive_create_alert_alert_pap">PAP <span class="required">*</span> </label>
+    <div class="controls">
+<select name="action.thehive_create_alert.param.alert_pap" id="thehive_create_alert_alert_pap">
+        <option value="2">AMBER</option>
+        <option value="0">WHITE</option>
+        <option value="3">RED</option>
+        <option value="1">GREEN</option>
+</select>
+                <span class="help-block"> 
+                    PAP of the new alert entry. Default = "AMBER"
+                </span>
+    </div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="thehive_create_alert_alert_group_by">Group by  </label>
+    <div class="controls">
+	<input type="text" name="action.thehive_create_alert.param.alert_group_by" id="thehive_create_alert_alert_group_by"/>
+                <span class="help-block"> 
+                    Field to use when grouping similar events together into one alert entry. eg: "email_from"
+                </span>
+    </div>
+</div>
+</form>
