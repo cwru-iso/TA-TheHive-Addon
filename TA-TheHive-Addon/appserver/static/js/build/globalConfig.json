@@ -1,8 +1,8 @@
 {
     "meta": {
-        "displayName": "TheHive Add-on", 
         "restRoot": "TA_TheHive_Addon", 
         "name": "TA-TheHive-Addon", 
+        "displayName": "TheHive Add-on", 
         "version": "1.0.0", 
         "apiVersion": "3.0.0"
     }, 
@@ -15,13 +15,12 @@
                     "options": {
                         "saveValidator": "function(formData) { if(!formData.proxy_enabled || formData.proxy_enabled === '0') {return true; } if(!formData.proxy_url) { return 'Proxy Host can not be empty'; } if(!formData.proxy_port) { return 'Proxy Port can not be empty'; } return true; }"
                     }, 
-                    "title": "Proxy", 
                     "name": "proxy", 
                     "entity": [
                         {
-                            "type": "checkbox", 
                             "field": "proxy_enabled", 
-                            "label": "Enable"
+                            "label": "Enable", 
+                            "type": "checkbox"
                         }, 
                         {
                             "options": {
@@ -41,74 +40,74 @@
                                     }
                                 ]
                             }, 
-                            "type": "singleSelect", 
-                            "defaultValue": "http", 
                             "field": "proxy_type", 
-                            "label": "Proxy Type"
+                            "defaultValue": "http", 
+                            "label": "Proxy Type", 
+                            "type": "singleSelect"
                         }, 
                         {
-                            "type": "text", 
                             "validators": [
                                 {
-                                    "type": "string", 
-                                    "maxLength": 4096, 
                                     "minLength": 0, 
-                                    "errorMsg": "Max host length is 4096"
+                                    "errorMsg": "Max host length is 4096", 
+                                    "maxLength": 4096, 
+                                    "type": "string"
                                 }
                             ], 
                             "field": "proxy_url", 
-                            "label": "Host"
+                            "label": "Host", 
+                            "type": "text"
                         }, 
                         {
-                            "type": "text", 
                             "validators": [
                                 {
-                                    "type": "number", 
                                     "range": [
                                         1, 
                                         65535
-                                    ]
+                                    ], 
+                                    "type": "number"
                                 }
                             ], 
                             "field": "proxy_port", 
-                            "label": "Port"
+                            "label": "Port", 
+                            "type": "text"
                         }, 
                         {
-                            "type": "text", 
                             "validators": [
                                 {
-                                    "type": "string", 
-                                    "maxLength": 50, 
                                     "minLength": 0, 
-                                    "errorMsg": "Max length of username is 50"
+                                    "errorMsg": "Max length of username is 50", 
+                                    "maxLength": 50, 
+                                    "type": "string"
                                 }
                             ], 
                             "field": "proxy_username", 
-                            "label": "Username"
+                            "label": "Username", 
+                            "type": "text"
                         }, 
                         {
-                            "type": "text", 
                             "encrypted": true, 
                             "field": "proxy_password", 
                             "validators": [
                                 {
-                                    "type": "string", 
-                                    "maxLength": 8192, 
                                     "minLength": 0, 
-                                    "errorMsg": "Max length of password is 8192"
+                                    "errorMsg": "Max length of password is 8192", 
+                                    "maxLength": 8192, 
+                                    "type": "string"
                                 }
                             ], 
-                            "label": "Password"
+                            "label": "Password", 
+                            "type": "text"
                         }, 
                         {
-                            "type": "checkbox", 
                             "field": "proxy_rdns", 
-                            "label": "Remote DNS resolution"
+                            "label": "Remote DNS resolution", 
+                            "type": "checkbox"
                         }
-                    ]
+                    ], 
+                    "title": "Proxy"
                 }, 
                 {
-                    "title": "Logging", 
                     "name": "logging", 
                     "entity": [
                         {
@@ -137,51 +136,52 @@
                                     }
                                 ]
                             }, 
-                            "type": "singleSelect", 
-                            "defaultValue": "INFO", 
                             "field": "loglevel", 
-                            "label": "Log level"
+                            "defaultValue": "INFO", 
+                            "label": "Log level", 
+                            "type": "singleSelect"
                         }
-                    ]
+                    ], 
+                    "title": "Logging"
                 }, 
                 {
-                    "title": "Add-on Settings", 
                     "name": "additional_parameters", 
                     "entity": [
                         {
-                            "help": "Base URL for your instance of TheHive. eg: \"https://thehive.example.com\"", 
-                            "type": "text", 
-                            "required": true, 
-                            "defaultValue": "", 
+                            "label": "TheHive URL", 
                             "field": "thehive_url", 
                             "validators": [
                                 {
-                                    "type": "string", 
-                                    "maxLength": 8192, 
                                     "minLength": 0, 
-                                    "errorMsg": "Max length of text input is 8192"
+                                    "errorMsg": "Max length of text input is 8192", 
+                                    "maxLength": 8192, 
+                                    "type": "string"
                                 }
                             ], 
-                            "label": "TheHive URL"
-                        }, 
-                        {
-                            "help": "API key for the user account that will be creating alerts in TheHive.", 
-                            "type": "text", 
                             "required": true, 
                             "defaultValue": "", 
-                            "field": "thehive_key", 
+                            "help": "Base URL for your instance of TheHive. eg: \"https://thehive.example.com\"", 
+                            "type": "text"
+                        }, 
+                        {
+                            "label": "API Key", 
                             "encrypted": true, 
+                            "field": "thehive_key", 
                             "validators": [
                                 {
-                                    "type": "string", 
-                                    "maxLength": 8192, 
                                     "minLength": 0, 
-                                    "errorMsg": "Max length of password is 8192"
+                                    "errorMsg": "Max length of password is 8192", 
+                                    "maxLength": 8192, 
+                                    "type": "string"
                                 }
                             ], 
-                            "label": "API Key"
+                            "required": true, 
+                            "defaultValue": "", 
+                            "help": "API key for the user account that will be creating alerts in TheHive.", 
+                            "type": "text"
                         }
-                    ]
+                    ], 
+                    "title": "Add-on Settings"
                 }
             ]
         }
