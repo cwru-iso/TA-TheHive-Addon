@@ -34,13 +34,18 @@ The Title, SourceRef, and Description, will only be pulled from the _first_ occu
 
 ```
 [base search query]
-| eval alert_desc = "Some long dynamic description for your alert" 
-| eval someArtifact = "dataType:Artifact Message"
-| eval anotherArtifact = "field:fieldType:Field Name"
+| eval alert_desc = "Some long dynamic description for your alert\n\n```\n" . _raw . "\n```"
+| eval "dataType:Artifact Message" = someArtifact
+| eval "field:fieldType:Field Name" = anotherArtifact
+| [... etc ...]
 | table alert_desc "dataType:Artifact Message" "field:fieldType:Field Name" ...
 ```
 
-Any fields that **do not** include a dataType will not be included in the Alert.
+**Caveats**
+
+* You **must** `table` the results at the end with **all** fields.
+* Any fields that **do not** include a dataType will **not** be included in the Alert.
+* All `\n` will be treated as actual newlines in the Alert description.
 
 # Licence
 
