@@ -30,6 +30,18 @@ Alerts can now use the "Create alert in TheHive" action.
 
 The Title, SourceRef, and Description, will only be pulled from the _first_ occurrence.
 
+# Search Setup
+
+```
+[base search query]
+| eval alert_desc = "Some long dynamic description for your alert" 
+| eval someArtifact = "dataType:Artifact Message"
+| eval anotherArtifact = "field:fieldType:Field Name"
+| table alert_desc "dataType:Artifact Message" "field:fieldType:Field Name" ...
+```
+
+Any fields that **do not** include a dataType will not be included in the Alert.
+
 # Licence
 
 This Splunk app is licensed under the GNU General Public License v3.0.

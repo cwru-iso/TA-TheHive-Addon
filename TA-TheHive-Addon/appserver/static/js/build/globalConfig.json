@@ -1,9 +1,9 @@
 {
     "meta": {
-        "restRoot": "TA_TheHive_Addon", 
         "name": "TA-TheHive-Addon", 
+        "restRoot": "TA_TheHive_Addon", 
         "displayName": "TheHive Add-on", 
-        "version": "1.0.0", 
+        "version": "1.1.0", 
         "apiVersion": "3.0.0"
     }, 
     "pages": {
@@ -149,7 +149,6 @@
                     "entity": [
                         {
                             "label": "TheHive URL", 
-                            "field": "thehive_url", 
                             "validators": [
                                 {
                                     "minLength": 0, 
@@ -158,15 +157,15 @@
                                     "type": "string"
                                 }
                             ], 
-                            "required": true, 
                             "defaultValue": "", 
                             "help": "Base URL for your instance of TheHive. eg: \"https://thehive.example.com\"", 
-                            "type": "text"
+                            "type": "text", 
+                            "field": "thehive_url", 
+                            "required": true
                         }, 
                         {
-                            "label": "API Key", 
                             "encrypted": true, 
-                            "field": "thehive_key", 
+                            "label": "API Key", 
                             "validators": [
                                 {
                                     "minLength": 0, 
@@ -175,10 +174,11 @@
                                     "type": "string"
                                 }
                             ], 
-                            "required": true, 
                             "defaultValue": "", 
                             "help": "API key for the user account that will be creating alerts in TheHive.", 
-                            "type": "text"
+                            "type": "text", 
+                            "field": "thehive_key", 
+                            "required": true
                         }
                     ], 
                     "title": "Add-on Settings"
